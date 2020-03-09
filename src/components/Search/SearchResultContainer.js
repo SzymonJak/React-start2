@@ -6,11 +6,13 @@ import {
   countAllCards,
   createAction_changeSearchString,
 } from '../../redux/searchStringRedux';
+import {getCardsForSearch} from '../../redux/cardsReducer';
 
 const mapStateToProps = (state) => ({
   searchString: getSearchString(state),
   countVisible: countVisibleCards(state),
   countAll: countAllCards(state),
+  cards: getCardsForSearch(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
